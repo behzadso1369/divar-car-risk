@@ -1,0 +1,1343 @@
+{
+ "sections": [
+  {
+   "section_name": "BREADCRUMB",
+   "widgets": [
+    {
+     "widget_type": "BREADCRUMB",
+     "data": {
+      "@type": "type.googleapis.com/widgets.BreadcrumbData",
+      "parent_items": [
+       {
+        "title": "وسایل نقلیه",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "vehicles"
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       },
+       {
+        "title": "خودرو",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "cars"
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       },
+       {
+        "title": "خودرو سواری و وانت",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "light"
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       },
+       {
+        "title": "پژو",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "light"
+              }
+             },
+             "brand_model": {
+              "repeated_string": {
+               "value": [
+                "Peugeot"
+               ]
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       },
+       {
+        "title": "206",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "light"
+              }
+             },
+             "brand_model": {
+              "repeated_string": {
+               "value": [
+                "Peugeot 206"
+               ]
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       },
+       {
+        "title": "تیپ ۵",
+        "action": {
+         "type": "OPEN_POSTLIST_PAGE_GRPC",
+         "payload": {
+          "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+          "search_data": {
+           "form_data": {
+            "data": {
+             "category": {
+              "str": {
+               "value": "light"
+              }
+             },
+             "brand_model": {
+              "repeated_string": {
+               "value": [
+                "Peugeot 206 5"
+               ]
+              }
+             }
+            }
+           }
+          },
+          "source_view": "CATEGORY_BREAD_CRUMB",
+          "source_view_str": "CATEGORY_BREAD_CRUMB"
+         }
+        }
+       }
+      ],
+      "current_page_title": "206 تیپ 5 مدل 97",
+      "padded": true
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "TITLE",
+   "widgets": [
+    {
+     "widget_type": "LEGEND_TITLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.LegendTitleRowData",
+      "title": "206 تیپ 5 مدل 97",
+      "high_level_heading": true,
+      "padding": "NO_PADDING"
+     }
+    },
+    {
+     "widget_type": "EXPANDABLE_SECTION",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ExpandableSectionData",
+      "widget_list": [
+       {
+        "widget_type": "DESCRIPTION_ROW",
+        "data": {
+         "@type": "type.googleapis.com/widgets.DescriptionRowData",
+         "text": "انتشار آگهی: ۱۰ مهر ۱۴۰۵، ۱۲:۵۴\nآخرین به\u200cروز\u200cرسانی: ۱۰ مهر ۱۴۰۵، ۱۵:۱۴",
+         "is_primary": true,
+         "small": true,
+         "text_alignment": "RIGHT"
+        }
+       }
+      ],
+      "title": "۵ ساعت پیش در تهران، امام حسین",
+      "icon": {}
+     }
+    },
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "زنگ خطرهای قبل از معامله",
+      "action": {
+       "type": "LOAD_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.LoadPagePayload",
+        "title": "زنگ خطرهای قبل از معامله",
+        "widget_list": [
+         {
+          "widget_type": "INFO_BOX",
+          "data": {
+           "@type": "type.googleapis.com/widgets.InfoBoxData",
+           "uuid": "light-fraud-alert-deposit-info-box",
+           "component_type": "INFO",
+           "text": "نمونه پیام: «چند نفر دیگه هم برای ماشین تماس گرفتن. اگه می\u200cخواید براتون نگهش دارم، یه مبلغی بیعانه واریز کنید.»",
+           "title": "قبل از بازدید خودرو، واریز بیعانه ممنوع!"
+          },
+          "uid": "light-fraud-alert-deposit-info-box"
+         },
+         {
+          "widget_type": "INFO_BOX",
+          "data": {
+           "@type": "type.googleapis.com/widgets.InfoBoxData",
+           "uuid": "light-fraud-alert-price-info-box",
+           "component_type": "INFO",
+           "text": "نمونه پیام: «فوری به پول نیاز دارم، برای همین ماشین رو خیلی پایین\u200cتر از قیمت بازار گذاشتم. فقط باید امروز معامله کنیم.»",
+           "title": "قیمت خیلی پایین، یعنی خطر!"
+          },
+          "uid": "light-fraud-alert-price-info-box"
+         },
+         {
+          "widget_type": "INFO_BOX",
+          "data": {
+           "@type": "type.googleapis.com/widgets.InfoBoxData",
+           "uuid": "light-fraud-alert-support-info-box",
+           "component_type": "POSITIVE",
+           "text": "راه\u200cحل: هیچ\u200cوقت بیعانه رو مستقیم واریز نکن.\u003cbr/\u003eبه\u200cجاش می\u200cتونی از «بیعانه امن» استفاده کنی.\u003cbr/\u003eاگه دربارهٔ نحوهٔ استفاده از بیعانه امن سؤالی داری، پشتیبان هوشمند دیوار همین الان کنارته.",
+           "title": "با «بیعانه امن» خیالت راحته!"
+          },
+          "uid": "light-fraud-alert-support-info-box"
+         }
+        ],
+        "sticky_widget": {
+         "widget_type": "WIDE_BUTTON_BAR",
+         "data": {
+          "@type": "type.googleapis.com/widgets.WideButtonBarData",
+          "button": {
+           "title": "ارتباط با پشتیبان هوشمند",
+           "action": {
+            "type": "OPEN_WEB_PAGE",
+            "payload": {
+             "@type": "type.googleapis.com/widgets.OpenWebPagePayload",
+             "link": "https://divar.ir/help/chat?cbd_cd_entry_source=trust_alerts_light&cbd_cd_problem_data=post_token%3Dga_i3H7H&cbd_cd_problem_subject=trust_alerts&cbd_open_new_conversation=true"
+            }
+           }
+          }
+         }
+        },
+        "slug": "light-fraud-alert",
+        "presentation": {
+         "is_new_flow": true
+        }
+       }
+      },
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/warning.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/warning.png",
+       "icon_name": "WARNING",
+       "icon_color": "ICON_SECONDARY"
+      },
+      "has_arrow": true,
+      "last_notification_date": "0001-01-01T00:00:00Z"
+     },
+     "action_log": {
+      "server_side_info": {
+       "info": {
+        "@type": "type.googleapis.com/action_log.PostWarningInfo",
+        "post_token": "ga_i3H7H"
+       },
+       "item_type": {
+        "type": "POST_WARNING"
+       }
+      },
+      "enabled": true
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "DESCRIPTION",
+   "widgets": [
+    {
+     "widget_type": "TITLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.TitleRowData",
+      "text": "توضیحات",
+      "text_color": "TEXT_PRIMARY",
+      "text_type": "SECONDARY"
+     }
+    },
+    {
+     "widget_type": "DESCRIPTION_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.DescriptionRowData",
+      "text": "206 تیپ 5\nمدل 97\nکارکرد 96 هزار تا\nچراغ عقب 207\nشیشه دودی\nقفل کاپوت\nقفل کامپیوتر\nمعاینه فنی به روز\nبیمه یکسال دارد\nسرویس کولر و بخاری به روز\nدرب راننده تعویض\nگلگیر راننده تعویض\nفنی سالم",
+      "is_primary": true,
+      "text_alignment": "RIGHT"
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "IMAGE",
+   "widgets": [
+    {
+     "widget_type": "IMAGE_CAROUSEL",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ImageCarouselData",
+      "items": [
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/aa3BE2uRuI81bSn9ZajkEg/71326d6b-87b1-411e-b439-b49134cab7ee.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/9gvwCyd8qEOT2cPBAur2pg/71326d6b-87b1-411e-b439-b49134cab7ee.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/2XOF4KptPOPb1xym9Tf7Lg/139946b8-6b9f-4cb9-928b-628c9f3e8fdd.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/2beV_xCBADxAZUw-0QyaJw/139946b8-6b9f-4cb9-928b-628c9f3e8fdd.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/qsUEymJVbAN8UVEwPApFyg/3bc0826d-c74f-43bf-8c55-1e04ce446501.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/6THdN1Ai11lN1FCUme3DWA/3bc0826d-c74f-43bf-8c55-1e04ce446501.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/poVTjPH5g9CMSc8iBd2TUA/7ccbb25f-ad81-46ed-9986-be1149b2ade0.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/GmYU3PrLdDiwb1pO8QwMtg/7ccbb25f-ad81-46ed-9986-be1149b2ade0.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/WXYkZF77pT1BwztqzyeFkw/460a9a79-4e7b-4352-8ffd-991061478118.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/4rDDCcSJY1ZBS4-bzFqMIg/460a9a79-4e7b-4352-8ffd-991061478118.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/D0YnVoRIkd_Kp0pq7N9jyg/cbe84c4d-6b66-4dfd-ae5d-ca8b611cc14b.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/SAbrVYP-3t83h-Y2IcuE3Q/cbe84c4d-6b66-4dfd-ae5d-ca8b611cc14b.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/RDd7aSPdX35pCdw_EeWKvw/909bc0fd-af27-4368-a35c-d8967b92f596.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/uv94nGmFudYj_cVmeielbg/909bc0fd-af27-4368-a35c-d8967b92f596.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/Bira-iSvmBBM3fRamCma7Q/aad927e7-15f1-42b3-a0ea-2251891084f2.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/6Ii98XrKbMo8QsSDiK1avA/aad927e7-15f1-42b3-a0ea-2251891084f2.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/InOHAL6UF9ABuBHJ1FK6Nw/96804231-80ca-4b7e-be12-c99718146933.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/g35Uog38tlVFFeRSfyUAgA/96804231-80ca-4b7e-be12-c99718146933.webp"
+        }
+       },
+       {
+        "image": {
+         "url": "https://s100.divarcdn.com/static/photo/neda/webp_post/W_XJqIeXXcyKr1rJ4zqpfg/8f7e61c2-ab1b-403b-879a-930ba79f1c5c.webp",
+         "alt": "206 تیپ 5 مدل 97|خودرو سواری و وانت|تهران, امام حسین|دیوار",
+         "thumbnail_url": "https://s100.divarcdn.com/static/photo/neda/webp_thumbnail/EJW70x9_E8vwYQcXAD3ZDQ/8f7e61c2-ab1b-403b-879a-930ba79f1c5c.webp"
+        }
+       }
+      ],
+      "image_aspect_ratio": {
+       "dynamic_aspect_ratio": {
+        "height": 3,
+        "width": 4
+       }
+      },
+      "has_preview": true,
+      "has_thumbnails": true
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "LIST_DATA",
+   "widgets": [
+    {
+     "widget_type": "GROUP_INFO_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.GroupInfoRow",
+      "items": [
+       {
+        "title": "کارکرد",
+        "value": "۹۶۰۰۰"
+       },
+       {
+        "title": "مدل (سال تولید)",
+        "value": "۱۳۹۷ - ۲۰۱۸"
+       },
+       {
+        "title": "رنگ",
+        "value": "سفید"
+       }
+      ],
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "UNEXPANDABLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+      "title": "برند و مدل",
+      "value": "پژو 206 تیپ ۵",
+      "action": {
+       "type": "OPEN_POSTLIST_PAGE_GRPC",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+        "search_data": {
+         "form_data": {
+          "data": {
+           "category": {
+            "str": {
+             "value": "light"
+            }
+           },
+           "brand_model": {
+            "repeated_string": {
+             "value": [
+              "Peugeot 206 5"
+             ]
+            }
+           }
+          }
+         }
+        },
+        "source_view": "POST_VIEW_LIST_DATA_ITEM",
+        "tooltip": "آگهی\u200cهای بیشتر برای پژو 206 تیپ ۵",
+        "source_view_str": "POST_VIEW_LIST_DATA_ITEM"
+       }
+      },
+      "has_divider": true
+     },
+     "action_log": {
+      "server_side_info": {
+       "info": {
+        "@type": "type.googleapis.com/action_log.PostViewListDataItemInfo",
+        "post_token": "ga_i3H7H",
+        "jli": {
+         "category": {
+          "value": "light"
+         },
+         "brand_model": {
+          "value": [
+           "Peugeot 206 5"
+          ]
+         }
+        },
+        "field": "brand_model",
+        "value": "Peugeot 206 5"
+       },
+       "item_type": {
+        "type": "POST_VIEW_LIST_DATA_ITEM"
+       }
+      },
+      "enabled": true
+     }
+    },
+    {
+     "widget_type": "UNEXPANDABLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+      "title": "مهلت بیمهٔ شخص ثالث",
+      "value": "۱۲ ماه",
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "UNEXPANDABLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+      "title": "گیربکس",
+      "value": "دنده\u200cای",
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "UNEXPANDABLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+      "title": "نوع سوخت",
+      "value": "بنزین",
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "UNEXPANDABLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+      "title": "قیمت پایه",
+      "value": "\u200f۱,۴۹۰,۰۰۰,۰۰۰ تومان",
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "SECTION_TITLE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SectionTitleRowData",
+      "title": "ارزیابی فروشنده",
+      "title_color": "TEXT_PRIMARY",
+      "padding": "ALT"
+     }
+    },
+    {
+     "widget_type": "SCORE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ScoreRowData",
+      "title": "موتور",
+      "descriptive_score": "سالم",
+      "score_color": "TEXT_SECONDARY",
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/success_primary/v1/check_circle.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/success_primary/v1/check_circle.png",
+       "icon_name": "CHECK_CIRCLE",
+       "icon_color": "SUCCESS_PRIMARY"
+      }
+     }
+    },
+    {
+     "widget_type": "SCORE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ScoreRowData",
+      "title": "وضعیت شاسی\u200cها",
+      "descriptive_score": "سالم و پلمپ",
+      "score_color": "TEXT_SECONDARY",
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/success_primary/v1/check_circle.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/success_primary/v1/check_circle.png",
+       "icon_name": "CHECK_CIRCLE",
+       "icon_color": "SUCCESS_PRIMARY"
+      }
+     }
+    },
+    {
+     "widget_type": "SCORE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ScoreRowData",
+      "title": "بدنه",
+      "descriptive_score": "رنگ\u200cشدگی در ۱ ناحیه",
+      "score_color": "TEXT_SECONDARY",
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/success_secondary/v1/check_circle.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/success_secondary/v1/check_circle.png",
+       "icon_name": "CHECK_CIRCLE",
+       "icon_color": "SUCCESS_SECONDARY"
+      }
+     }
+    },
+    {
+     "widget_type": "TAG_LIST_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.TagListRowData",
+      "tags": [
+       {
+        "text": "۱. درب سمت راننده جلو",
+        "icon": {}
+       }
+      ],
+      "has_divider": true
+     }
+    },
+    {
+     "widget_type": "SCORE_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.ScoreRowData",
+      "title": "گیربکس",
+      "descriptive_score": "سالم و پلمپ",
+      "score_color": "TEXT_SECONDARY",
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/success_primary/v1/check_circle.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/success_primary/v1/check_circle.png",
+       "icon_name": "CHECK_CIRCLE",
+       "icon_color": "SUCCESS_PRIMARY"
+      }
+     }
+    },
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "سایر ویژگی\u200cها و امکانات",
+      "action": {
+       "type": "LOAD_MODAL_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.LoadModalPagePayload",
+        "modal_page": {
+         "title": "ویژگی\u200cها و امکانات",
+         "widget_list": [
+          {
+           "widget_type": "DESCRIPTION_ROW",
+           "data": {
+            "@type": "type.googleapis.com/widgets.DescriptionRowData",
+            "text": "آپشن\u200cها و لوازم اضافی",
+            "is_primary": true,
+            "expandable": true,
+            "padded": true,
+            "preview_max_line": 4,
+            "text_alignment": "RIGHT"
+           }
+          },
+          {
+           "widget_type": "WRAPPER_ROW",
+           "data": {
+            "@type": "type.googleapis.com/widgets.WrapperRowData",
+            "chip_list": {
+             "chips": [
+              {
+               "text": "شیشه دودی",
+               "type": "ACTION",
+               "small": true
+              }
+             ]
+            },
+            "padded": true
+           }
+          },
+          {
+           "widget_type": "UNEXPANDABLE_ROW",
+           "data": {
+            "@type": "type.googleapis.com/widgets.UnexpandableRowData",
+            "title": "مالکیت خودرو",
+            "value": "مالک خودرو هستم",
+            "has_divider": true
+           }
+          }
+         ]
+        }
+       }
+      },
+      "has_divider": true,
+      "icon": {},
+      "has_arrow": true,
+      "last_notification_date": "0001-01-01T00:00:00Z",
+      "fullwidth": true
+     },
+     "action_log": {
+      "server_side_info": {
+       "info": {
+        "@type": "type.googleapis.com/action_log.ViewPostFeaturesInfo",
+        "post_token": "ga_i3H7H"
+       },
+       "item_type": {
+        "type": "VIEW_POST_FEATURES"
+       }
+      },
+      "enabled": true
+     }
+    },
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "بررسی و کارشناسی",
+      "action": {
+       "type": "OPEN_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.OpenPagePayload",
+        "request_http_method": "POST",
+        "request_data": {
+         "@type": "type.googleapis.com/service_providers.GetServiceProvidersPageRequest.RequestData",
+         "source_v2": "DEMAND_POST",
+         "filter": {
+          "service_types": [
+           "REPORT_INSPECTION"
+          ],
+          "city_id": 1,
+          "category": "light",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST"
+         },
+         "action_data_builder": {
+          "conversation_id": "ga_i3H7H",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST",
+          "source": "DEMAND_POST",
+          "lead_source": "DEMAND"
+         },
+         "display_data": {
+          "page_title": "بررسی و کارشناسی"
+         },
+         "trace_id": "0400b8f7-2639-41cd-8d4d-a26c7d027b3b",
+         "source": "DEMAND_POST",
+         "lead_source": "DEMAND"
+        },
+        "specification": {
+         "@type": "type.googleapis.com/widgets.OpenPagePayload.SimplePageSpecification"
+        },
+        "is_modal": true,
+        "rest_request_path": "/v8/open-platform/service-providers",
+        "grpc_request_path": "/service_providers.ServiceProviders/GetServiceProvidersPage"
+       }
+      },
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/article-magnifier.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/article-magnifier.png",
+       "icon_name": "ARTICLE_MAGNIFIER",
+       "icon_color": "ICON_SECONDARY"
+      },
+      "has_arrow": true,
+      "last_notification_date": "0001-01-01T00:00:00Z"
+     }
+    },
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "ارزیابی قیمت",
+      "action": {
+       "type": "OPEN_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.OpenPagePayload",
+        "request_http_method": "POST",
+        "request_data": {
+         "@type": "type.googleapis.com/service_providers.GetServiceProvidersPageRequest.RequestData",
+         "source_v2": "DEMAND_POST",
+         "filter": {
+          "service_types": [
+           "REPORT_PRICE_EVALUATION"
+          ],
+          "city_id": 1,
+          "category": "light",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST"
+         },
+         "action_data_builder": {
+          "conversation_id": "ga_i3H7H",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST",
+          "source": "DEMAND_POST",
+          "lead_source": "DEMAND"
+         },
+         "display_data": {
+          "page_title": "ارزیابی قیمت"
+         },
+         "trace_id": "0400b8f7-2639-41cd-8d4d-a26c7d027b3b",
+         "source": "DEMAND_POST",
+         "lead_source": "DEMAND"
+        },
+        "specification": {
+         "@type": "type.googleapis.com/widgets.OpenPagePayload.SimplePageSpecification"
+        },
+        "is_modal": true,
+        "rest_request_path": "/v8/open-platform/service-providers",
+        "grpc_request_path": "/service_providers.ServiceProviders/GetServiceProvidersPage"
+       }
+      },
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/tag_check_circle.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/tag_check_circle.png",
+       "icon_name": "TAG_CHECK_CIRCLE",
+       "icon_color": "ICON_SECONDARY"
+      },
+      "has_arrow": true,
+      "last_notification_date": "0001-01-01T00:00:00Z"
+     }
+    },
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "خرید با تسهیلات",
+      "action": {
+       "type": "OPEN_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.OpenPagePayload",
+        "request_http_method": "POST",
+        "request_data": {
+         "@type": "type.googleapis.com/service_providers.GetServiceProvidersPageRequest.RequestData",
+         "source_v2": "DEMAND_POST",
+         "filter": {
+          "service_types": [
+           "FUNC_FINANCING"
+          ],
+          "city_id": 1,
+          "category": "light",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST"
+         },
+         "action_data_builder": {
+          "conversation_id": "ga_i3H7H",
+          "post_token": "ga_i3H7H",
+          "touchpoint": "DEMAND_POST",
+          "source": "DEMAND_POST",
+          "lead_source": "DEMAND"
+         },
+         "display_data": {
+          "page_title": "خرید با تسهیلات"
+         },
+         "trace_id": "0400b8f7-2639-41cd-8d4d-a26c7d027b3b",
+         "source": "DEMAND_POST",
+         "lead_source": "DEMAND"
+        },
+        "specification": {
+         "@type": "type.googleapis.com/widgets.OpenPagePayload.SimplePageSpecification"
+        },
+        "is_modal": true,
+        "rest_request_path": "/v8/open-platform/service-providers",
+        "grpc_request_path": "/service_providers.ServiceProviders/GetServiceProvidersPage"
+       }
+      },
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/earnest.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/earnest.png",
+       "icon_name": "EARNEST",
+       "icon_color": "ICON_SECONDARY"
+      },
+      "has_arrow": true,
+      "last_notification_date": "0001-01-01T00:00:00Z"
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "TAGS",
+   "widgets": [
+    {
+     "widget_type": "WRAPPER_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.WrapperRowData",
+      "chip_list": {
+       "chips": [
+        {
+         "text": "خودرو سواری و وانت",
+         "type": "ACTION",
+         "action": {
+          "type": "OPEN_POSTLIST_PAGE_GRPC",
+          "payload": {
+           "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+           "search_data": {
+            "form_data": {
+             "data": {
+              "category": {
+               "str": {
+                "value": "light"
+               }
+              }
+             }
+            }
+           },
+           "source_view": "CATEGORY_BREAD_CRUMB",
+           "source_view_str": "CATEGORY_BREAD_CRUMB"
+          }
+         }
+        },
+        {
+         "text": "خودرو سواری و وانت در امام حسین",
+         "type": "ACTION",
+         "action": {
+          "type": "OPEN_POSTLIST_PAGE_GRPC",
+          "payload": {
+           "@type": "type.googleapis.com/widgets.OpenPostListPageGRPCPayload",
+           "search_data": {
+            "form_data": {
+             "data": {
+              "category": {
+               "str": {
+                "value": "light"
+               }
+              },
+              "districts": {
+               "repeated_string": {
+                "value": [
+                 "287"
+                ]
+               }
+              }
+             }
+            }
+           },
+           "source_view": "CATEGORY_BREAD_CRUMB",
+           "source_view_str": "CATEGORY_BREAD_CRUMB"
+          }
+         }
+        }
+       ]
+      }
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "MAP",
+   "widgets": [
+    {
+     "widget_type": "MAP_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.MapRowData",
+      "location": {
+       "type": "FUZZY",
+       "fuzzy_data": {
+        "point": {
+         "latitude": 35.7018747,
+         "longitude": 51.44623
+        },
+        "radius": 500
+       }
+      },
+      "image_url": "https://mapimage.divarcdn.com/v8/mapimage?encrypted_data=MTIzNDU2Nzg5MTIzXKReq5aJzqzuQgaIpDEwYvpLI_qqE0rE1ioXuNeXvKUb3g==&is_nearby=true"
+     },
+     "action_log": {
+      "server_side_info": {
+       "info": {
+        "@type": "type.googleapis.com/action_log.MapInfo",
+        "post_token": "ga_i3H7H"
+       },
+       "item_type": {
+        "type": "MAP"
+       }
+      },
+      "enabled": true
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "NOTE",
+   "widgets": [
+    {
+     "widget_type": "NOTE",
+     "data": {
+      "@type": "type.googleapis.com/widgets.NoteData",
+      "title": "یادداشت من",
+      "button_title": "ویرایش یادداشت",
+      "post_token": "ga_i3H7H",
+      "icon_button": {
+       "icon": {
+        "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/more_vert.png",
+        "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/more_vert.png",
+        "icon_name": "MORE_VERT",
+        "icon_color": "ICON_SECONDARY"
+       },
+       "action": {
+        "type": "LOAD_MENU",
+        "payload": {
+         "@type": "type.googleapis.com/widgets.LoadMenuPayload",
+         "menu": {
+          "items": [
+           {
+            "text": "ویرایش یادداشت",
+            "icon": {
+             "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/edit.png",
+             "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/edit.png",
+             "icon_name": "EDIT",
+             "icon_color": "ICON_SECONDARY"
+            },
+            "action": {
+             "type": "NOTE",
+             "payload": {
+              "@type": "type.googleapis.com/widgets.NotePayload",
+              "post_token": "ga_i3H7H",
+              "max_character_count": 256
+             }
+            },
+            "alignment": "RIGHT"
+           },
+           {
+            "text": "حذف یادداشت",
+            "icon": {
+             "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_primary/v1/trash_o.png",
+             "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_primary/v1/trash_o.png",
+             "icon_name": "TRASH_O",
+             "icon_color": "ICON_PRIMARY"
+            },
+            "action": {
+             "type": "MAKE_NETWORK_CALL",
+             "payload": {
+              "@type": "type.googleapis.com/widgets.MakeNetworkCallPayload",
+              "grpc_request_path": "/yaad_v2.YaadV2/DeleteNoteV2",
+              "rest_request_path": "/yaad/delete-note-v2",
+              "request_data": {
+               "@type": "type.googleapis.com/yaad_v2.DeleteNoteV2Request.RequestData",
+               "token": "ga_i3H7H"
+              },
+              "needs_auth": true
+             }
+            },
+            "alignment": "RIGHT",
+            "state": "STATE_NEGATIVE"
+           }
+          ],
+          "banner": {}
+         },
+         "display_type": "LOAD_MENU_DISPLAY_TYPE_BOTTOM_SHEET"
+        }
+       }
+      }
+     }
+    }
+   ]
+  },
+  {
+   "section_name": "STATIC",
+   "widgets": [
+    {
+     "widget_type": "SELECTOR_ROW",
+     "data": {
+      "@type": "type.googleapis.com/widgets.SelectorRowData",
+      "title": "گزارش آگهی",
+      "action": {
+       "type": "OPEN_FORM_PAGE",
+       "payload": {
+        "@type": "type.googleapis.com/widgets.OpenFormPagePayload",
+        "grpc_servicer": "/post_quality.PostQualityFeedback/GetFeedbackForm",
+        "request_data": {
+         "@type": "type.googleapis.com/post_quality.GetFeedbackFormRequest.RequestData",
+         "post_token": "ga_i3H7H"
+        },
+        "rest_request_path": "/v8/post-quality/feedback-form"
+       }
+      },
+      "has_divider": true,
+      "icon": {
+       "image_url_dark": "https://s100.divarcdn.com/static/imgs/widget-icons/dark/icon_secondary/v1/report.png",
+       "image_url_light": "https://s100.divarcdn.com/static/imgs/widget-icons/light/icon_secondary/v1/report.png",
+       "icon_name": "REPORT",
+       "icon_color": "ICON_SECONDARY"
+      },
+      "last_notification_date": "0001-01-01T00:00:00Z"
+     }
+    }
+   ]
+  }
+ ],
+ "share": {
+  "title": "206 تیپ 5 مدل 97",
+  "web_url": "https://divar.ir/v/ga_i3H7H"
+ },
+ "seo": {
+  "title": "206 تیپ 5 مدل 97 در تهران - ۱۰ مهر ۱۴۰۵",
+  "description": "آگهی 206 تیپ 5 مدل 97 در دیوار تهران",
+  "android_package_name": "ir.divar",
+  "android_app_url": "android-app://ir.divar/http/v/206 تیپ 5 مدل 97/ga_i3H7H/",
+  "web_info": {
+   "title": "206 تیپ 5 مدل 97",
+   "district_persian": "امام حسین",
+   "city_persian": "تهران",
+   "category_slug_persian": "خودرو سواری و وانت"
+  },
+  "unavailable_after": "2026-11-02T12:54:22.311345",
+  "bread_crumb": [
+   {
+    "name": "پژو 206 تیپ ۵",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "light"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       },
+       "brand_model": {
+        "repeated_string": {
+         "value": [
+          "Peugeot 206 5"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "پژو 206",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "light"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       },
+       "brand_model": {
+        "repeated_string": {
+         "value": [
+          "Peugeot 206"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "پژو",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "light"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       },
+       "brand_model": {
+        "repeated_string": {
+         "value": [
+          "Peugeot"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "خودرو سواری و وانت",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "light"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "خودرو",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "cars"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "وسایل نقلیه",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "category": {
+        "str": {
+         "value": "vehicles"
+        }
+       },
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "امام حسین",
+    "search_data": {
+     "form_data": {
+      "data": {
+       "districts": {
+        "repeated_string": {
+         "value": [
+          "287"
+         ]
+        }
+       }
+      }
+     }
+    }
+   },
+   {
+    "name": "1",
+    "search_data": {
+     "form_data": {}
+    }
+   },
+   {
+    "name": "دیوار"
+   }
+  ],
+  "post_seo_schema": {
+   "name": "206 تیپ 5 مدل 97",
+   "productionDate": "0",
+   "brand": {
+    "@type": "Brand",
+    "name": "پژو 206"
+   },
+   "category": "light",
+   "color": "سفید",
+   "mileageFromOdometer": {
+    "@type": "QuantitativeValue",
+    "value": "96000",
+    "unitCode": "KMT"
+   },
+   "@type": "Car",
+   "vehicleModelDate": "621",
+   "knownVehicleDamages": "some-paint",
+   "description": "206 تیپ 5\nمدل 97\nکارکرد 96 هزار تا\nچراغ عقب 207\nشیشه دودی\nقفل کاپوت\nقفل کامپیوتر\nمعاینه فنی به روز\nبیمه یکسال دارد\nسرویس کولر و بخاری به روز\nدرب راننده تعویض\nگلگیر راننده تعویض\nفنی سالم",
+   "model": "Peugeot 206 5",
+   "@context": "https://schema.org",
+   "vehicleIdentificationNumber": "GJP9DDZ1YRFA2455E",
+   "image": "https://s100.divarcdn.com/static/photo/neda/webp_post/aa3BE2uRuI81bSn9ZajkEg/71326d6b-87b1-411e-b439-b49134cab7ee.webp",
+   "url": "https://divar.ir/v/206-تیپ-5-مدل-97/ga_i3H7H",
+   "itemCondition": "https://schema.org/UsedCondition",
+   "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "priceCurrency": "IRR",
+    "price": "1490000000"
+   },
+   "vehicleTransmission": "manual",
+   "web_info": {
+    "city_persian": "تهران",
+    "district_persian": "امام حسین",
+    "category_slug_persian": "خودرو سواری و وانت",
+    "title": "206 تیپ 5 مدل 97"
+   }
+  },
+  "image_url": "https://s100.divarcdn.com/static/photo/neda/post/IBisKXLPycHL92zZpJW1Tw/71326d6b-87b1-411e-b439-b49134cab7ee.jpg"
+ },
+ "contact": {
+  "action_log": {
+   "server_side_info": {
+    "info": {
+     "@type": "type.googleapis.com/action_log.ContactInfoInfo",
+     "post_token": "ga_i3H7H",
+     "method_name": "GetContactWeb",
+     "contact_uuid": "220dd712-6761-431b-89c5-d78d22a48ebf"
+    },
+    "item_type": {
+     "type": "CONTACT_INFO"
+    }
+   },
+   "enabled": true
+  },
+  "contact_uuid": "220dd712-6761-431b-89c5-d78d22a48ebf"
+ },
+ "webengage": {
+  "gender": "",
+  "business_type": "personal",
+  "image_count": 10,
+  "status": "",
+  "credit": 0,
+  "brand_model": "Peugeot 206 5",
+  "business_ref": "",
+  "rent": 0,
+  "cat_3": "light",
+  "source_view": "",
+  "district": "emam-hossein",
+  "price": 1490000000,
+  "originality": "",
+  "cat_2": "cars",
+  "category": "light",
+  "cat_1": "vehicles",
+  "token": "ga_i3H7H",
+  "city": "tehran"
+ },
+ "analytics": {
+  "cat1": "vehicles",
+  "cat2": "cars",
+  "cat3": "light",
+  "city": "tehran"
+ },
+ "city": {
+  "city_id": "1",
+  "name": "تهران",
+  "parent_id": "904",
+  "second_slug": "tehran"
+ }
+}

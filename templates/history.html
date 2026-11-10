@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block style %}
+.pill { padding: 2px 10px; border-radius: 999px; font-size: 13px; font-weight: 500; }
+.t-low { background: var(--low-soft); color: var(--low); }
+.t-medium { background: var(--med-soft); color: var(--med); }
+.t-high { background: var(--high-soft); color: var(--high); }
+.scroll { overflow-x: auto; }
+{% endblock %}
+{% block content %}
+{% if saved %}<div class="ok">نتیجه کارشناسی ثبت شد.</div>{% endif %}
+<section class="card">
+  <h1>تاریخچه تحلیل‌ها</h1>
+  <p class="muted small">{{ labeled }} نتیجه کارشناسی ثبت شده. با حداقل ۳۰ نتیجه، دستور <code class="ltr">python cli.py train</code> مدل ریسک را آموزش می‌دهد.</p>
+  <div class="scroll">
+  <table>
+    <tr><th>زمان</th><th>آگهی</th><th>مدل</th><th>سال</th><th>قیمت</th><th>ریسک</th><th>صداقت</th><th>نتیجه کارشناسی</th></tr>
+    {% for i in items %}
+    <tr>
+      <td class="small">{{ i.when }}</td>
+      <td><a href="https://divar.ir/v/{{ i.token }}" target="_blank" rel="noopener" class="ltr">{{ i.token }}</a></td>
+      <td class="ltr small">{{ i.brand_model }}</td><td>{{ i.year }}</td>
+      <td class="small">{{ i.price|toman if i.price else '—' }}</td>
+      <td><span class="pill t-{{ i.tier }}">{{ i.risk_score|round|int }} · {{ i.tier_fa }}</span></td>
+      <td>{% if i.honesty_score is not none %}{{ i.honesty_score|round|int }}{% else %}<span class="muted">—</span>{% endif %}</td>
+      <td class="small">{% if i.hidden_issue is none %}<span class="muted">ثبت نشده</span>
+        {% elif i.hidden_issue %}ایراد پنهان (شدت {{ i.severity }}){% else %}مطابق آگهی{% endif %}</td>
+    </tr>
+    {% else %}<tr><td colspan="8" class="muted">هنوز تحلیلی انجام نشده.</td></tr>{% endfor %}
+  </table>
+  </div>
+</section>
+{% endblock %}

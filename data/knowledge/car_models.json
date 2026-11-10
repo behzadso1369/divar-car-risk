@@ -1,0 +1,351 @@
+{
+  "_readme": "دانش اختصاصی هر مدل. match: پیشوند slug دیوار (brand_model)، fa_keywords: کلمات نام فارسی (همه باید باشند). gearbox: null یا automatic/manual. base_risk: ریسک ذاتی مدل از ۰ تا ۱۰. ratings: ۱ تا ۵. این فایل را با تجربه کارشناس‌هایتان کامل کنید.",
+  "rating_labels": {
+    "resale": "نقدشوندگی و حفظ ارزش",
+    "low_maintenance": "هزینه نگهداری پایین",
+    "fuel_economy": "مصرف سوخت پایین",
+    "safety": "ایمنی",
+    "comfort": "راحتی و سواری",
+    "durability": "دوام فنی"
+  },
+  "models": [
+    {
+      "id": "peugeot_206_auto",
+      "name": "پژو ۲۰۶ اتوماتیک",
+      "match": ["Peugeot 206"], "fa_keywords": ["پژو", "206"], "gearbox": "automatic",
+      "segment": "small", "seats": 5, "base_risk": 7,
+      "ratings": {"resale": 4, "low_maintenance": 2, "fuel_economy": 3, "safety": 2, "comfort": 3, "durability": 2},
+      "common_issues": [
+        "گیربکس اتومات AL4: ایراد سولنوئیدها، ضربه هنگام تعویض دنده و رفتن به حالت اضطراری (امرجنسی)",
+        "داغ کردن موتور به‌دلیل ترموستات و فن",
+        "نشتی روغن از واشر درب سوپاپ"
+      ],
+      "checklist": [
+        "تست جاده کامل گیربکس در حالت سرد و گرم؛ دنده ۱ به ۲ و ۲ به ۳ نباید ضربه بزند",
+        "دیاگ کردن و خواندن خطاهای ثبت‌شده گیربکس",
+        "سوابق تعویض روغن گیربکس"
+      ],
+      "notes": "هزینه تعمیر گیربکس AL4 می‌تواند بخش قابل‌توجهی از قیمت خودرو باشد."
+    },
+    {
+      "id": "peugeot_206",
+      "name": "پژو ۲۰۶ (دنده‌ای)",
+      "match": ["Peugeot 206"], "fa_keywords": ["پژو", "206"], "gearbox": null,
+      "segment": "small", "seats": 5, "base_risk": 3,
+      "ratings": {"resale": 5, "low_maintenance": 4, "fuel_economy": 4, "safety": 2, "comfort": 2, "durability": 3},
+      "common_issues": [
+        "نشتی روغن از واشر درب سوپاپ و کارتل",
+        "داغ کردن موتور: ترموستات، فن، رادیاتور و پمپ آب",
+        "گیربکس MA: صدای بلبرینگ و خشک بودن دنده ۲ و ۳ (سنکرون)",
+        "دسته موتور، طبق و کمک‌فنرها (صدای جلوبندی)",
+        "ایرادات سیم‌کشی و ECU در مدل‌های قدیمی‌تر"
+      ],
+      "checklist": [
+        "بررسی رنگ‌شدگی ستون‌ها و سینی جلو (در تصادف‌های جلو آسیب می‌بینند)",
+        "استارت در حالت سرد و بررسی دود اگزوز",
+        "تست دنده ۲ و ۳ در حال حرکت؛ نباید صدا یا گیر داشته باشد",
+        "بررسی آب رادیاتور (روغنی نباشد) و دمای موتور در ترافیک"
+      ],
+      "notes": "از نقدشونده‌ترین خودروهای بازار؛ قطعات ارزان و همه‌جا موجود."
+    },
+    {
+      "id": "peugeot_207_auto",
+      "name": "پژو ۲۰۷ اتوماتیک",
+      "match": ["Peugeot 207"], "fa_keywords": ["پژو", "207"], "gearbox": "automatic",
+      "segment": "small", "seats": 5, "base_risk": 6,
+      "ratings": {"resale": 5, "low_maintenance": 2, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": [
+        "گیربکس اتومات: در مدل‌های دارای AL4 ایرادات شناخته‌شده (سولنوئید، ضربه، امرجنسی)",
+        "داغ کردن موتور TU5 به‌دلیل ترموستات و فن",
+        "صدای جلوبندی"
+      ],
+      "checklist": [
+        "نوع گیربکس (AL4 یا نسل جدید) را از روی سال و تیپ بررسی کنید",
+        "دیاگ گیربکس و تست جاده در حالت گرم",
+        "سوابق تعویض روغن گیربکس"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "peugeot_207",
+      "name": "پژو ۲۰۷ (دنده‌ای)",
+      "match": ["Peugeot 207"], "fa_keywords": ["پژو", "207"], "gearbox": null,
+      "segment": "small", "seats": 5, "base_risk": 3,
+      "ratings": {"resale": 5, "low_maintenance": 4, "fuel_economy": 4, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": [
+        "داغ کردن موتور TU5: ترموستات، فن و پمپ آب",
+        "نشتی روغن واشر درب سوپاپ",
+        "صدای جلوبندی و دسته موتور"
+      ],
+      "checklist": [
+        "بررسی سقف و ستون‌ها از نظر رنگ (در مدل‌های پانوراما سقف حساس است)",
+        "تست دمای موتور در ترافیک"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "peugeot_405_pars",
+      "name": "پژو ۴۰۵ / پارس",
+      "match": ["Peugeot 405", "Peugeot Pars", "Peugeot pars"], "fa_keywords": ["پژو", "405"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 4, "fuel_economy": 2, "safety": 2, "comfort": 3, "durability": 3},
+      "common_issues": [
+        "موتور XU7: واشر سرسیلندر و داغ کردن (رادیاتور، پمپ آب)",
+        "زنگ‌زدگی کف، رکاب و گلگیرها در مدل‌های قدیمی",
+        "ایرادات برق و سیم‌کشی",
+        "گیربکس BE3 معمولاً مقاوم است ولی صدای دیفرانسیل را بررسی کنید"
+      ],
+      "checklist": [
+        "بررسی کف و رکاب از زیر خودرو (زنگ‌زدگی و جوش)",
+        "روغنی بودن آب رادیاتور (نشانه واشر سرسیلندر)",
+        "بخار یا دود سفید از اگزوز در حالت گرم"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "peugeot_pars_fa",
+      "name": "پژو پارس",
+      "match": [], "fa_keywords": ["پارس"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 4, "fuel_economy": 2, "safety": 2, "comfort": 3, "durability": 3},
+      "common_issues": [
+        "موتور XU7 یا TU5: واشر سرسیلندر و داغ کردن",
+        "ایرادات برق و سیم‌کشی",
+        "صدای جلوبندی"
+      ],
+      "checklist": ["روغنی بودن آب رادیاتور", "بررسی کف و رکاب از زیر خودرو"],
+      "notes": ""
+    },
+    {
+      "id": "rana",
+      "name": "رانا",
+      "match": ["IKCO Runna", "Runna", "Rana"], "fa_keywords": ["رانا"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 3,
+      "ratings": {"resale": 3, "low_maintenance": 4, "fuel_economy": 4, "safety": 2, "comfort": 3, "durability": 3},
+      "common_issues": ["موتور TU5: داغ کردن و نشتی روغن", "صدای جلوبندی", "کیفیت تودوزی"],
+      "checklist": ["تست دمای موتور در ترافیک", "بررسی ستون‌ها و سینی جلو"],
+      "notes": ""
+    },
+    {
+      "id": "pride",
+      "name": "پراید",
+      "match": ["Pride", "Saipa Pride"], "fa_keywords": ["پراید"], "gearbox": null,
+      "segment": "small", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 5, "fuel_economy": 4, "safety": 1, "comfort": 1, "durability": 2},
+      "common_issues": [
+        "ایمنی بسیار پایین در تصادف",
+        "زنگ‌زدگی کف، رکاب و زیر گلگیرها",
+        "صدای گیربکس و دیفرانسیل",
+        "تولید از سال ۱۳۹۹ متوقف شده؛ بیشتر خودروها کارکرد بالا دارند"
+      ],
+      "checklist": [
+        "بررسی کامل کف و شاسی از زیر خودرو (جوشکاری و زنگ‌زدگی)",
+        "بررسی رنگ ستون‌ها و سقف",
+        "تست کلاچ (بالا گرفتن کلاچ = فرسودگی صفحه)"
+      ],
+      "notes": "به‌دلیل قیمت پایین، احتمال تصادف‌های قبلی و تعمیرات ارزان بیشتر است."
+    },
+    {
+      "id": "saipa_cvt",
+      "name": "سایپا تیبا/ساینا/کوییک اتوماتیک",
+      "match": ["Saipa Quick", "Saipa Saina", "Quick", "Saina"], "fa_keywords": [], "fa_any": ["ساینا", "کوییک", "کوئیک"], "gearbox": "automatic",
+      "segment": "small", "seats": 5, "base_risk": 7,
+      "ratings": {"resale": 3, "low_maintenance": 2, "fuel_economy": 4, "safety": 2, "comfort": 2, "durability": 2},
+      "common_issues": [
+        "گیربکس CVT: حساس به تعویض به‌موقع روغن؛ لرزش، صدای زوزه و تأخیر در حرکت",
+        "کیفیت ساخت و تودوزی"
+      ],
+      "checklist": [
+        "تست شتاب‌گیری از حالت توقف در سربالایی",
+        "صدای زوزه گیربکس در سرعت ثابت",
+        "سوابق تعویض روغن CVT"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "saipa_x1",
+      "name": "سایپا تیبا / ساینا / کوییک",
+      "match": ["Saipa Tiba", "Saipa Quick", "Saipa Saina", "Tiba", "Quick", "Saina"],
+      "fa_keywords": [], "fa_any": ["تیبا", "ساینا", "کوییک", "کوئیک"], "gearbox": null,
+      "segment": "small", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 3, "low_maintenance": 4, "fuel_economy": 4, "safety": 2, "comfort": 2, "durability": 2},
+      "common_issues": [
+        "کیفیت پایین تودوزی و صدای داشبورد",
+        "صدای جلوبندی و کمک‌فنرها",
+        "گیربکس: صدای بلبرینگ و سختی تعویض دنده"
+      ],
+      "checklist": ["تست جلوبندی روی دست‌انداز", "بررسی ستون‌ها و سقف از نظر رنگ"],
+      "notes": ""
+    },
+    {
+      "id": "samand",
+      "name": "سمند",
+      "match": ["IKCO Samand", "Samand"], "fa_keywords": ["سمند"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 3, "low_maintenance": 4, "fuel_economy": 2, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": [
+        "موتور EF7/XU7: واشر سرسیلندر و داغ کردن",
+        "ایرادات سیستم برق و نمایشگرها",
+        "صدای گیربکس"
+      ],
+      "checklist": ["روغنی بودن آب رادیاتور", "در مدل‌های دوگانه‌سوز: تاریخ آزمایش مخزن CNG"],
+      "notes": ""
+    },
+    {
+      "id": "dena_auto",
+      "name": "دنا / دنا پلاس اتوماتیک",
+      "match": ["IKCO Dena", "Dena"], "fa_keywords": ["دنا"], "gearbox": "automatic",
+      "segment": "sedan", "seats": 5, "base_risk": 5,
+      "ratings": {"resale": 4, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 4, "durability": 3},
+      "common_issues": [
+        "گیربکس اتومات: ضربه یا تأخیر در تعویض دنده، حساس به روغن",
+        "موتور EF7 توربو: صدای توربو و مصرف روغن",
+        "داغ کردن موتور"
+      ],
+      "checklist": ["دیاگ موتور و گیربکس", "تست جاده در حالت گرم", "سوت توربو و دود اگزوز"],
+      "notes": ""
+    },
+    {
+      "id": "dena",
+      "name": "دنا / دنا پلاس",
+      "match": ["IKCO Dena", "Dena"], "fa_keywords": ["دنا"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 4, "durability": 3},
+      "common_issues": [
+        "موتور EF7: داغ کردن و واشر سرسیلندر",
+        "نسخه توربو: صدای توربو و مصرف روغن",
+        "نشتی روغن"
+      ],
+      "checklist": ["روغنی بودن آب رادیاتور", "تست دمای موتور در ترافیک"],
+      "notes": ""
+    },
+    {
+      "id": "shahin",
+      "name": "سایپا شاهین",
+      "match": ["Saipa Shahin", "Shahin"], "fa_keywords": ["شاهین"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 3, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": ["کیفیت مونتاژ متغیر بین سری‌های تولید", "نسخه اتومات: گیربکس CVT حساس به سرویس"],
+      "checklist": ["بررسی فاصله درزها", "در نسخه اتومات: تست شتاب و صدای گیربکس"],
+      "notes": ""
+    },
+    {
+      "id": "renault_auto",
+      "name": "رنو ساندرو / تندر ۹۰ اتوماتیک",
+      "match": ["Renault"], "fa_keywords": [], "fa_any": ["رنو", "تندر", "ساندرو"], "gearbox": "automatic",
+      "segment": "small", "seats": 5, "base_risk": 6,
+      "ratings": {"resale": 4, "low_maintenance": 2, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": ["گیربکس اتومات ۴ سرعته DP0: داغ کردن و ضربه هنگام تعویض دنده", "قطعات گران‌تر از خودروهای داخلی"],
+      "checklist": ["دیاگ گیربکس", "تست جاده طولانی در حالت گرم"],
+      "notes": ""
+    },
+    {
+      "id": "renault",
+      "name": "رنو تندر ۹۰ / ساندرو",
+      "match": ["Renault"], "fa_keywords": [], "fa_any": ["رنو", "تندر", "ساندرو"], "gearbox": null,
+      "segment": "small", "seats": 5, "base_risk": 3,
+      "ratings": {"resale": 4, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 4},
+      "common_issues": ["موتور مقاوم؛ زمان تعویض تسمه تایم را حتماً بپرسید", "صدای جلوبندی", "قطعات کمی گران‌تر از پژو"],
+      "checklist": ["سوابق تعویض تسمه تایم", "بررسی ستون‌ها و سینی جلو"],
+      "notes": ""
+    },
+    {
+      "id": "mvm",
+      "name": "ام‌وی‌ام",
+      "match": ["MVM"], "fa_keywords": [], "fa_any": ["ام وی ام", "mvm"], "gearbox": null,
+      "segment": "crossover", "seats": 5, "base_risk": 5,
+      "ratings": {"resale": 2, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 2},
+      "common_issues": ["افت قیمت بیشتر از خودروهای داخلی پرفروش", "کیفیت مونتاژ و ایرادات برقی", "نسخه اتومات: سلامت گیربکس"],
+      "checklist": ["دیاگ کامل", "بررسی عملکرد تمام تجهیزات برقی"],
+      "notes": ""
+    },
+    {
+      "id": "haima",
+      "name": "هایما",
+      "match": ["Haima"], "fa_keywords": ["هایما"], "gearbox": null,
+      "segment": "crossover", "seats": 5, "base_risk": 6,
+      "ratings": {"resale": 2, "low_maintenance": 2, "fuel_economy": 2, "safety": 3, "comfort": 4, "durability": 2},
+      "common_issues": ["موتور توربو: سلامت توربو و مصرف روغن", "گیربکس اتومات", "افت قیمت بالا"],
+      "checklist": ["سوت و دود توربو", "دیاگ موتور و گیربکس"],
+      "notes": ""
+    },
+    {
+      "id": "jac",
+      "name": "جک",
+      "match": ["JAC"], "fa_keywords": ["جک"], "gearbox": null,
+      "segment": "crossover", "seats": 5, "base_risk": 5,
+      "ratings": {"resale": 2, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 3},
+      "common_issues": ["نسخه توربو: سلامت توربو", "گیربکس اتومات", "تأمین قطعه"],
+      "checklist": ["دیاگ کامل", "تست گیربکس در حالت گرم"],
+      "notes": ""
+    },
+    {
+      "id": "toyota",
+      "name": "تویوتا",
+      "match": ["Toyota"], "fa_keywords": ["تویوتا"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 3,
+      "ratings": {"resale": 5, "low_maintenance": 2, "fuel_economy": 3, "safety": 4, "comfort": 5, "durability": 5},
+      "common_issues": ["قطعات گران و گاهی سخت‌یاب", "در خودروهای وارداتی کارکرد دستکاری‌شده رایج است", "مدل‌های هیبریدی: سلامت باتری"],
+      "checklist": ["تطبیق کارکرد با سوابق سرویس", "اصالت قطعات بدنه", "در هیبرید: تست سلامت باتری"],
+      "notes": ""
+    },
+    {
+      "id": "hyundai",
+      "name": "هیوندای",
+      "match": ["Hyundai"], "fa_keywords": ["هیوندای"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 2, "fuel_economy": 3, "safety": 4, "comfort": 4, "durability": 4},
+      "common_issues": ["قطعات گران", "کارکرد دستکاری‌شده در وارداتی‌ها", "گیربکس اتومات در کارکرد بالا"],
+      "checklist": ["تطبیق کارکرد با سوابق", "دیاگ گیربکس"],
+      "notes": ""
+    },
+    {
+      "id": "kia",
+      "name": "کیا",
+      "match": ["Kia"], "fa_keywords": ["کیا"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 4,
+      "ratings": {"resale": 4, "low_maintenance": 2, "fuel_economy": 3, "safety": 4, "comfort": 4, "durability": 4},
+      "common_issues": ["قطعات گران", "کارکرد دستکاری‌شده در وارداتی‌ها", "گیربکس اتومات در کارکرد بالا"],
+      "checklist": ["تطبیق کارکرد با سوابق", "دیاگ گیربکس"],
+      "notes": ""
+    },
+    {
+      "id": "nissan",
+      "name": "نیسان",
+      "match": ["Nissan"], "fa_keywords": ["نیسان"], "gearbox": null,
+      "segment": "sedan", "seats": 5, "base_risk": 5,
+      "ratings": {"resale": 3, "low_maintenance": 2, "fuel_economy": 3, "safety": 4, "comfort": 4, "durability": 3},
+      "common_issues": ["برخی مدل‌ها گیربکس CVT دارند که در کارکرد بالا ایراد می‌دهد", "قطعات گران"],
+      "checklist": ["نوع گیربکس و سوابق تعویض روغن", "دیاگ کامل"],
+      "notes": ""
+    },
+    {
+      "id": "german_luxury",
+      "name": "خودروی لوکس آلمانی",
+      "match": ["BMW", "Mercedes", "Benz", "Audi", "Porsche", "Volkswagen"], "fa_keywords": [],
+      "fa_any": ["بی ام و", "بنز", "آئودی", "پورشه", "فولکس"], "gearbox": null,
+      "segment": "luxury", "seats": 5, "base_risk": 6,
+      "ratings": {"resale": 3, "low_maintenance": 1, "fuel_economy": 2, "safety": 5, "comfort": 5, "durability": 3},
+      "common_issues": ["هزینه قطعه و تعمیر بسیار بالا", "ایرادات الکترونیکی", "کارکرد دستکاری‌شده"],
+      "checklist": ["دیاگ تخصصی برند", "سوابق سرویس در نمایندگی", "تطبیق کارکرد"],
+      "notes": ""
+    }
+  ],
+  "default": {
+    "id": "default",
+    "name": "عمومی",
+    "segment": "unknown", "seats": 5, "base_risk": 4,
+    "ratings": {"resale": 3, "low_maintenance": 3, "fuel_economy": 3, "safety": 3, "comfort": 3, "durability": 3},
+    "common_issues": [],
+    "checklist": [],
+    "notes": "برای این مدل هنوز دانش اختصاصی ثبت نشده است؛ فایل data/knowledge/car_models.json را کامل کنید."
+  },
+  "general_checklist": [
+    "تطبیق شماره شاسی و موتور با سند و کارت",
+    "استعلام خلافی، عوارض و توقیف از سامانه پلیس راهور",
+    "بازدید در نور روز و با خودروی خشک (آب و تاریکی اختلاف رنگ را پنهان می‌کنند)",
+    "استارت در حالت سرد (موتور قبل از رسیدن شما روشن نشده باشد)",
+    "دیاگ و بررسی خطاهای ثبت‌شده",
+    "قبل از بازدید و کارشناسی هیچ بیعانه‌ای واریز نکنید"
+  ]
+}

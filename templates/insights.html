@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block style %}
+.bar { height: 10px; background: var(--bg); border-radius: 6px; overflow: hidden; min-width: 120px; }
+.bar > span { display: block; height: 100%; background: var(--high); }
+{% endblock %}
+{% block content %}
+<section class="card">
+  <h1>کدام ادعاها بیشتر دروغ است؟</h1>
+  <p class="muted small">بر اساس {{ total }} ادعایی که در کارشناسی‌های شما بررسی شده. هر نوع ادعا با حداقل ۵ نمونه در گزارش‌ها نمایش داده می‌شود؛
+    با ۱۰۰ نمونه، <code class="ltr">python cli.py train</code> مدل یادگیری ماشین ادعاها را آموزش می‌دهد.</p>
+  <table>
+    <tr><th>ادعا</th><th>تعداد بررسی</th><th>نادرست</th><th>نرخ نادرستی</th><th></th></tr>
+    {% for r in rows %}
+    <tr><td>{{ r.name }}</td><td>{{ r.n }}</td><td>{{ r.n_false }}</td>
+      <td>{{ (r.rate * 100)|round|int }}٪{% if r.n < 5 %} <span class="muted small">(داده کم)</span>{% endif %}</td>
+      <td><div class="bar"><span style="width:{{ (r.rate * 100)|round }}%"></span></div></td></tr>
+    {% else %}
+    <tr><td colspan="5" class="muted">هنوز نتیجه کارشناسی برای ادعاها ثبت نشده. بعد از هر کارشناسی، در پایین صفحه گزارش درست یا نادرست بودن هر ادعا را ثبت کنید.</td></tr>
+    {% endfor %}
+  </table>
+</section>
+{% endblock %}

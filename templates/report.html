@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+{% block title %}گزارش ریسک — {{ ad.title }}{% endblock %}
+{% block style %}
+.hero { display: grid; grid-template-columns: 1fr auto; gap: 20px; align-items: center; }
+.badge { text-align: center; border-radius: 14px; padding: 14px 22px; min-width: 170px; }
+.badge .score { font-size: 40px; font-weight: 800; line-height: 1.1; }
+.badge .tier { font-weight: 700; font-size: 17px; }
+.t-low { background: var(--low-soft); color: var(--low); }
+.t-medium { background: var(--med-soft); color: var(--med); }
+.t-high { background: var(--high-soft); color: var(--high); }
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 16px; }
+.kpi { background: var(--bg); border-radius: 10px; padding: 10px 12px; }
+.kpi .v { font-weight: 700; font-size: 16px; } .kpi .k { color: var(--muted); font-size: 12px; }
+.rec { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--accent-soft); }
+.f { border-inline-start: 4px solid var(--line); padding: 8px 12px; margin: 8px 0; background: var(--bg); border-radius: 8px; }
+.f.high { border-color: var(--high); } .f.medium { border-color: var(--med); } .f.low { border-color: #d0a640; }
+.f.positive { border-color: var(--pos); } .f.info { border-color: var(--info); }
+.f .h { display: flex; justify-content: space-between; gap: 10px; font-weight: 500; }
+.f .p { font-weight: 700; white-space: nowrap; font-size: 13px; }
+.f.high .p { color: var(--high); } .f.medium .p { color: var(--med); } .f.positive .p { color: var(--pos); }
+.f .d { color: var(--muted); font-size: 13px; }
+.f .q { font-size: 13px; margin-top: 4px; } .f .e { font-size: 12px; color: var(--muted); }
+.stage-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.stage-pts { font-size: 13px; color: var(--muted); }
+.bar { height: 10px; background: var(--bg); border-radius: 6px; overflow: hidden; }
+.bar > span { display: block; height: 100%; background: var(--accent); }
+ol.q li { margin-bottom: 6px; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+svg text { fill: var(--muted); font-size: 11px; font-family: inherit; }
+.legend { display: flex; gap: 16px; font-size: 13px; color: var(--muted); flex-wrap: wrap; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: middle; margin-inline-end: 4px; }
+.rating { display: flex; align-items: center; gap: 8px; margin: 4px 0; font-size: 14px; }
+.rating .bar { flex: 1; }
+.hon-head { display: flex; gap: 20px; align-items: center; flex-wrap: wrap; }
+.hon-low { color: var(--low); } .hon-medium { color: var(--med); } .hon-high { color: var(--high); }
+.bar > span.b-low { background: var(--low); } .bar > span.b-medium { background: var(--med); }
+.bar > span.b-high { background: var(--high); }
+tr.cl-contradicted td { background: var(--high-soft); } tr.cl-implausible td { background: var(--med-soft); }
+.learned { color: var(--accent); margin-top: 2px; }
+.scroll { overflow-x: auto; }
+.claim-row { display: grid; grid-template-columns: 1fr 180px; gap: 10px; align-items: center;
+  padding: 8px 0; border-bottom: 1px solid var(--line); }
+@media (max-width: 700px) { .hero { grid-template-columns: 1fr; } .two { grid-template-columns: 1fr; }
+  .claim-row { grid-template-columns: 1fr; } }
+{% endblock %}
+
+{% macro finding(f) %}
+<div class="f {{ f.level }}">
+  <div class="h"><span>{{ f.title }}</span>
+    {% if f.points %}<span class="p">{{ '%+.0f'|format(f.points) }}</span>{% endif %}</div>
+  {% if f.detail %}<div class="d">{{ f.detail }}</div>{% endif %}
+  {% if f.evidence %}<div class="e">متن آگهی: «{{ f.evidence }}»</div>{% endif %}
+  {% if f.question %}<div class="q">❓ {{ f.question }}</div>{% endif %}
+</div>
+{% endmacro %}
+
+{% macro stage_card(name) %}{% set x = st[name] %}
+<section class="card">
+  <div class="stage-head"><h2>{{ x.title }}</h2>
+    {% if not x.skipped and name not in ('needs', 'scoring') %}<span class="stage-pts">امتیاز ریسک این مرحله: {{ x.points }}</span>{% endif %}</div>
+  {% if x.skipped %}<p class="muted">انجام نشد: {{ x.skip_reason }}</p>{% endif %}
+  {{ caller() }}
+  {% for f in x.findings %}{{ finding(f) }}{% endfor %}
+</section>
+{% endmacro %}
+
+{% block content %}
+<section class="card">
+  <div class="hero">
+    <div>
+      <h1>{{ ad.title }}</h1>
+      <div class="muted small">{{ ad.brand_model_fa }} · مدل {{ ad.year_jalali }} · {{ ad.km|num }} کیلومتر · {{ ad.gearbox }} · {{ ad.location_text }}</div>
+      <div class="small"><a href="{{ ad.url }}" target="_blank" rel="noopener">مشاهده آگهی در دیوار ↗</a>
+        <span class="muted"> · تحلیل: {{ r.generated_at.replace('T', ' ') }}</span></div>
+    </div>
+    <div class="badge t-{{ s.tier }}">
+      <div class="score">{{ s.final_score|round|int }}</div>
+      <div class="tier">{{ s.tier_fa }}</div>
+      <div class="small">از ۱۰۰ · اطمینان {{ s.confidence }}٪</div>
+    </div>
+  </div>
+  <div class="kpis">
+    {% if s.honesty_score is not none %}
+    <div class="kpi"><div class="k">صداقت آگهی</div><div class="v hon-{{ s.honesty_level }}">{{ s.honesty_score }} از ۱۰۰</div></div>
+    {% endif %}
+    <div class="kpi"><div class="k">قیمت آگهی</div><div class="v">{{ ad.price|toman if ad.price else 'توافقی' }}</div></div>
+    {% if st.pricing.data.available %}
+    <div class="kpi"><div class="k">قیمت منصفانه (ما)</div><div class="v">{{ st.pricing.data.fair_price|toman }}</div></div>
+    <div class="kpi"><div class="k">ارزیابی قیمت</div><div class="v">{{ s.deal_label }} ({{ st.pricing.data.diff_pct|pct }})</div></div>
+    {% endif %}
+    {% if st.needs.data.fit_score is not none %}
+    <div class="kpi"><div class="k">تطابق با نیاز مشتری</div><div class="v">{{ st.needs.data.fit_score }}٪</div></div>
+    {% endif %}
+    {% if s.ml_probability is not none %}
+    <div class="kpi"><div class="k">احتمال ایراد پنهان (مدل ML)</div><div class="v">{{ (s.ml_probability * 100)|round|int }}٪</div></div>
+    {% endif %}
+  </div>
+  <div class="rec"><strong>توصیه:</strong> {{ s.recommendation }}</div>
+  {% if s.missing %}<p class="muted small">اطلاعات ناقص: {{ s.missing|join('، ') }}</p>{% endif %}
+</section>
+
+{% set h = st.honesty.data %}
+{% if h %}
+<section class="card">
+  <div class="stage-head"><h2>صداقت فروشنده: چقدر به حرف‌های آگهی می‌شود اعتماد کرد؟</h2></div>
+  <div class="hon-head">
+    <div class="badge t-{{ h.level }}" style="min-width:140px">
+      <div class="score">{{ h.score }}</div><div class="small">از ۱۰۰</div>
+    </div>
+    <div style="flex:1">
+      <div style="font-weight:700;margin-bottom:6px">{{ h.label }}</div>
+      {% for k, v in h.scores.items() %}
+      <div class="rating"><span style="min-width:190px">{{ h.score_labels[k] }}</span>
+        <div class="bar"><span class="b-{{ 'low' if v >= 75 else 'medium' if v >= 50 else 'high' }}" style="width:{{ v }}%"></span></div>
+        <span style="min-width:34px">{{ v }}</span></div>
+      {% endfor %}
+    </div>
+  </div>
+
+  {% if h.claims %}
+  <h3>ادعاهای آگهی ({{ h.claims|length }})</h3>
+  <div class="scroll"><table>
+    <tr><th></th><th>ادعا</th><th>متن آگهی</th><th>بررسی</th></tr>
+    {% for c in h.claims %}
+    <tr class="cl-{{ c.status }}">
+      <td>{{ c.icon }}</td>
+      <td><strong>{{ c.label }}</strong><div class="small muted">{{ c.status_fa }}</div></td>
+      <td class="small">«{{ c.evidence }}»</td>
+      <td class="small">{{ c.reason }}
+        {% if c.p_false is not none %}<div class="learned">مدل ML: احتمال نادرستی {{ (c.p_false * 100)|round|int }}٪</div>
+        {% elif c.learned_false_rate is not none %}<div class="learned">در {{ c.learned_n }} کارشناسی قبلی شما، این ادعا {{ (c.learned_false_rate * 100)|round|int }}٪ موارد نادرست بوده</div>{% endif %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table></div>
+  {% else %}
+  <p class="muted">ادعای مشخصی در متن آگهی پیدا نشد.</p>
+  {% endif %}
+
+  <div class="two" style="margin-top:12px">
+    <div class="small">
+      <strong>تعریف کلی ({{ h.n_puffery }}):</strong>
+      {% if h.puffery %}{{ h.puffery|join('، ') }}{% else %}<span class="muted">ندارد</span>{% endif %}<br>
+      <strong>جزئیات مشخص و قابل بررسی ({{ h.n_specific }}):</strong>
+      {% if h.specifics %}{{ h.specifics[:10]|join('، ') }}{% endif %}
+      {% if h.admitted_flaws %} + {{ h.admitted_flaws }} ایراد اعلام‌شده{% endif %}
+    </div>
+    <div class="small"><strong>شفافیت:</strong>
+      {% if h.transparency_notes %}{{ h.transparency_notes|join(' · ') }}{% else %}<span class="muted">نشانه خاصی نیست</span>{% endif %}
+    </div>
+  </div>
+  {% if contras %}<h3>تناقض‌های متن با فرم و فیلدهای آگهی ({{ contras|length }})</h3>
+    {% for f in contras %}{{ finding(f) }}{% endfor %}{% endif %}
+  {% for f in st.honesty.findings if f.points %}{{ finding(f) }}{% endfor %}
+  <p class="muted small">«سازگار» یعنی با بقیه اطلاعات همین آگهی جور است، نه اینکه حتماً درست است؛ همه ادعاها در کارشناسی حضوری تأیید می‌شوند.</p>
+</section>
+{% endif %}
+
+<div class="two">
+  <section class="card">
+    <h2>مهم‌ترین دلایل ریسک</h2>
+    {% for f in s.top_risks %}{{ finding(f) }}{% else %}<p class="muted">نشانه ریسک مهمی پیدا نشد.</p>{% endfor %}
+    {% if s.positives %}<h3>نشانه‌های مثبت</h3>{% for f in s.positives %}{{ finding(f) }}{% endfor %}{% endif %}
+  </section>
+  <section class="card">
+    <h2>سؤال‌هایی که باید از فروشنده بپرسید</h2>
+    {% if s.questions %}<ol class="q">{% for q in s.questions %}<li>{{ q }}</li>{% endfor %}</ol>
+    {% else %}<p class="muted">سؤال خاصی ایجاد نشد.</p>{% endif %}
+  </section>
+</div>
+
+{% call stage_card('needs') %}
+  {% if not st.needs.data.empty %}
+  <p class="small muted">{{ st.needs.data.summary|join(' · ') }}</p>
+  {% if r.recommended_models %}<p class="small">مدل‌های پیشنهادی بر اساس اولویت‌های مشتری:
+    {% for m in r.recommended_models %}<strong>{{ m.name }}</strong>{% if not loop.last %}، {% endif %}{% endfor %}</p>{% endif %}
+  {% endif %}
+{% endcall %}
+
+{% call stage_card('text') %}{% set td = st.text.data %}
+  <table>
+    <tr><th>منبع</th><th>خسارت‌های بدنه</th></tr>
+    <tr><td>فرم ارزیابی فروشنده</td><td>
+      {% if td.form_body_clean %}سالم{% endif %}
+      {% for d in td.form_damages %}{{ d.label }} ({{ d.dtype_fa }}){% if not loop.last %}، {% endif %}{% endfor %}
+      {% if td.form_declared_areas and not td.form_damages %}{{ td.form_declared_areas }} ناحیه{% endif %}
+      {% if not td.seller_eval %}<span class="muted">پر نشده</span>{% endif %}</td></tr>
+    <tr><td>متن توضیحات</td><td>
+      {% for d in td.text_damages %}{{ d.label }} ({{ d.dtype_fa }}){% if not loop.last %}، {% endif %}{% endfor %}
+      {% if td.unspecified_paint_spots %}{{ td.unspecified_paint_spots }} لکه بدون ذکر محل{% endif %}
+      {% if not td.text_damages and not td.unspecified_paint_spots %}<span class="muted">اشاره‌ای نشده</span>{% endif %}</td></tr>
+    {% if td.seller_eval %}<tr><td>وضعیت فنی (فرم)</td><td>
+      {% for k, v in td.seller_eval.items() %}{% if 'بدنه' not in k %}{{ k }}: {{ v.value }}{% if not loop.last %} · {% endif %}{% endif %}{% endfor %}</td></tr>{% endif %}
+    <tr><td>کارکرد</td><td>فیلد: {{ ad.km|num }} · متن: {{ td.km_text|num }}{% if td.km_per_year %} · حدود {{ td.km_per_year|num }} در سال{% endif %}</td></tr>
+  </table>
+  {% for f in st.body.findings %}{{ finding(f) }}{% endfor %}
+{% endcall %}
+
+{% call stage_card('pricing') %}{% set p = st.pricing.data %}
+  {% if p.available %}
+  <div class="kpis">
+    <div class="kpi"><div class="k">آگهی مشابه بررسی‌شده</div><div class="v">{{ p.n_comparables }}</div></div>
+    <div class="kpi"><div class="k">میانه بازار</div><div class="v">{{ p.market_median|toman }}</div></div>
+    <div class="kpi"><div class="k">قیمت مورد انتظار با این کارکرد</div><div class="v">{{ p.expected_at_km|toman }}</div></div>
+    <div class="kpi"><div class="k">تعدیل بابت وضعیت</div><div class="v">{{ (-p.condition_discount)|pct }}</div></div>
+    <div class="kpi"><div class="k">بازه منصفانه</div><div class="v small">{{ p.fair_low|toman }} تا {{ p.fair_high|toman }}</div></div>
+  </div>
+  {% if chart %}
+  <svg viewBox="0 0 {{ chart.w }} {{ chart.h }}" width="100%" role="img" aria-label="نمودار قیمت بر حسب کارکرد" style="margin-top:12px" direction="ltr">
+    {% for y, label in chart.yticks %}
+      <line x1="{{ chart.pad_l }}" x2="{{ chart.w - chart.pad_r }}" y1="{{ y }}" y2="{{ y }}" stroke="var(--line)"/>
+      <text x="{{ chart.pad_l - 8 }}" y="{{ y + 4 }}" text-anchor="end">{{ label }}</text>
+    {% endfor %}
+    {% for x, label in chart.xticks %}
+      <text x="{{ x }}" y="{{ chart.h - 12 }}" text-anchor="middle">{{ label }}k</text>
+    {% endfor %}
+    {% for x, y in chart.dots %}<circle cx="{{ x }}" cy="{{ y }}" r="3.5" fill="var(--accent)" opacity=".35"/>{% endfor %}
+    <line x1="{{ chart.ask[0] }}" x2="{{ chart.fair[0] }}" y1="{{ chart.ask[1] }}" y2="{{ chart.fair[1] }}" stroke="var(--text)" stroke-dasharray="3 3"/>
+    <rect x="{{ chart.fair[0] - 6 }}" y="{{ chart.fair[1] - 6 }}" width="12" height="12" fill="var(--low)" transform="rotate(45 {{ chart.fair[0] }} {{ chart.fair[1] }})"/>
+    <circle cx="{{ chart.ask[0] }}" cy="{{ chart.ask[1] }}" r="7" fill="var(--high)" stroke="var(--card)" stroke-width="2"/>
+  </svg>
+  <div class="legend"><span><span class="dot" style="background:var(--accent);opacity:.5"></span>آگهی‌های مشابه</span>
+    <span><span class="dot" style="background:var(--high)"></span>این آگهی</span>
+    <span><span class="dot" style="background:var(--low);border-radius:2px"></span>قیمت منصفانه ما</span>
+    <span>محور افقی: کارکرد (هزار کیلومتر) · محور عمودی: میلیارد تومان</span></div>
+  {% endif %}
+  <p class="muted small">روش: {{ {'huber_regression': 'رگرسیون مقاوم روی کارکرد', 'median': 'میانه آگهی‌ها', 'global_model': 'مدل سراسری یادگرفته‌شده'}[p.method] }} · سال‌های بررسی‌شده: {{ p.years_used|join('، ') }}</p>
+  {% endif %}
+{% endcall %}
+
+{% call stage_card('behavior') %}{% endcall %}
+
+{% call stage_card('images') %}{% set im = st.images.data %}
+  {% if im.analyzed %}<p class="small muted">{{ im.analyzed }} عکس بررسی شد · میانگین روشنایی {{ im.avg_brightness }} از ۲۵۵</p>{% endif %}
+{% endcall %}
+
+{% call stage_card('scoring') %}
+  <table>
+    <tr><th>بخش</th><th>امتیاز ریسک</th><th style="width:40%"></th></tr>
+    {% for k, b in s.breakdown.items() %}
+    <tr><td>{{ b.title }}</td><td>{{ b.risk }} <span class="muted small">/ {{ b.cap }}</span></td>
+      <td><div class="bar"><span style="width:{{ (b.risk / b.cap * 100)|round }}%"></span></div></td></tr>
+    {% endfor %}
+    <tr><td>نشانه‌های مثبت</td><td>{{ s.positive_total }}</td><td></td></tr>
+    <tr><th>امتیاز قاعده‌محور</th><th>{{ s.rule_score }}</th><th></th></tr>
+    {% if s.ml_probability is not none %}<tr><th>امتیاز نهایی (ترکیب با مدل ML)</th><th>{{ s.final_score }}</th><th></th></tr>{% endif %}
+  </table>
+  <p class="muted small">سطح‌بندی: زیر ۲۵ ریسک پایین · ۲۵ تا ۵۰ ریسک متوسط · بالای ۵۰ ریسک بالا</p>
+{% endcall %}
+
+{% call stage_card('knowledge') %}{% set k = st.knowledge.data %}
+  <div class="two">
+    <div>
+      <h3>امتیاز مدل «{{ k.model_name }}»</h3>
+      {% for key, val in k.ratings.items() %}
+      <div class="rating"><span style="min-width:150px">{{ k.rating_labels.get(key, key) }}</span>
+        <div class="bar"><span style="width:{{ val * 20 }}%"></span></div><span>{{ val }}/۵</span></div>
+      {% endfor %}
+      {% if k.common_issues %}<h3>ایرادات رایج این مدل</h3><ul>{% for i in k.common_issues %}<li>{{ i }}</li>{% endfor %}</ul>{% endif %}
+    </div>
+    <div>
+      <h3>چک‌لیست بازدید</h3>
+      <ul>{% for c in k.checklist %}<li>{{ c }}</li>{% endfor %}</ul>
+    </div>
+  </div>
+{% endcall %}
+
+{% if not standalone %}
+<form class="card" method="post" action="/label">
+  <h2>ثبت نتیجه کارشناسی حضوری (برای آموزش مدل)</h2>
+  <p class="muted small">بعد از کارشناسی این خودرو، نتیجه را ثبت کنید تا مدل یادگیری ماشین از داده‌های واقعی شما یاد بگیرد.</p>
+  <input type="hidden" name="token" value="{{ ad.token }}">
+  <div class="grid">
+    <div><label>ایراد اعلام‌نشده پیدا شد؟</label>
+      <select name="hidden_issue"><option value="no">خیر</option><option value="yes">بله</option></select></div>
+    <div><label>شدت</label>
+      <select name="severity"><option value="0">سالم</option><option value="1">جزئی</option><option value="2">متوسط</option><option value="3">شدید</option></select></div>
+    <div><label>یادداشت</label><input type="text" name="notes"></div>
+  </div>
+  {% if h and h.claims %}
+  <h3>ادعاهای آگهی در کارشناسی درست بودند؟</h3>
+  <p class="muted small">این مهم‌ترین داده آموزشی است: سیستم یاد می‌گیرد کدام ادعاها معمولاً دروغ است.</p>
+  {% for c in h.claims %}
+  <div class="claim-row">
+    <div><strong>{{ c.label }}</strong> <span class="small muted">«{{ c.evidence }}»</span></div>
+    <select name="claim__{{ c.id }}">
+      <option value="">بررسی نشد</option>
+      <option value="1">✅ درست بود</option>
+      <option value="0">❌ نادرست بود</option>
+    </select>
+  </div>
+  {% endfor %}
+  {% endif %}
+  <div style="margin-top:14px"><button type="submit">ثبت نتیجه</button></div>
+</form>
+{% endif %}
+
+<p class="muted small">این گزارش «ریسک برآوردی بر اساس اطلاعات آگهی» است و جایگزین کارشناسی حضوری نیست.</p>
+{% endblock %}

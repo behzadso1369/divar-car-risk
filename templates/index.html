@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+{% if error %}<div class="error">{{ error }}</div>{% endif %}
+<form class="card" method="post" action="/analyze" onsubmit="this.querySelector('button').disabled=true;this.querySelector('button').textContent='در حال تحلیل… (۱۰ تا ۶۰ ثانیه)'">
+  <h1>تحلیل ریسک آگهی خودرو</h1>
+  <p class="muted small">لینک آگهی دیوار را وارد کنید. نیاز مشتری اختیاری است ولی تحلیل را دقیق‌تر می‌کند.</p>
+  <label for="url">لینک آگهی دیوار</label>
+  <input id="url" type="text" name="url" required dir="ltr" placeholder="https://divar.ir/v/..." value="{{ form.url or '' }}">
+
+  <h2 style="margin-top:24px">۱. نیاز مشتری</h2>
+  <div class="grid">
+    <div><label>حداقل بودجه (میلیون تومان)</label><input type="number" name="budget_min" min="0" step="10" value="{{ form.budget_min or '' }}"></div>
+    <div><label>حداکثر بودجه (میلیون تومان)</label><input type="number" name="budget_max" min="0" step="10" value="{{ form.budget_max or '' }}"></div>
+    <div><label>نوع استفاده</label>
+      <select name="usage">
+        {% for k, v in usage_options.items() %}<option value="{{ k }}" {% if (form.usage or 'mixed') == k %}selected{% endif %}>{{ v }}</option>{% endfor %}
+      </select></div>
+    <div><label>تعداد سرنشین معمول</label><input type="number" name="family" min="1" max="9" value="{{ form.family or 4 }}"></div>
+    <div><label>گیربکس</label>
+      <select name="gearbox">
+        <option value="any">فرقی نمی‌کند</option>
+        <option value="manual" {% if form.gearbox == 'manual' %}selected{% endif %}>دنده‌ای</option>
+        <option value="automatic" {% if form.gearbox == 'automatic' %}selected{% endif %}>اتوماتیک</option>
+      </select></div>
+    <div><label>حداکثر کارکرد (کیلومتر)</label><input type="number" name="max_km" min="0" step="1000" value="{{ form.max_km or '' }}"></div>
+    <div><label>حداقل سال ساخت (شمسی)</label><input type="number" name="min_year" min="1370" max="1410" value="{{ form.min_year or '' }}"></div>
+    <div><label>ریسک‌پذیری مشتری</label>
+      <select name="risk_tolerance">
+        <option value="low">کم</option>
+        <option value="medium" {% if form.risk_tolerance == 'medium' %}selected{% endif %}>متوسط</option>
+        <option value="high" {% if form.risk_tolerance == 'high' %}selected{% endif %}>زیاد</option>
+      </select></div>
+  </div>
+  <label style="margin-top:14px">اولویت‌ها</label>
+  <div class="chips">
+    {% for k, v in priority_options.items() %}
+    <label class="chip"><input type="checkbox" name="priorities" value="{{ k }}" {% if k in (form.priorities or []) %}checked{% endif %}> {{ v }}</label>
+    {% endfor %}
+  </div>
+  <div style="margin-top:16px">
+    <label class="chip" style="display:inline-flex"><input type="checkbox" name="images" value="1" {% if form.images %}checked{% endif %}> تحلیل عکس‌ها (۵. اختیاری، کندتر)</label>
+  </div>
+  <div style="margin-top:20px"><button type="submit">تحلیل آگهی</button></div>
+</form>
+<p class="muted small">این ابزار ریسک را بر اساس اطلاعات خود آگهی برآورد می‌کند و جایگزین کارشناسی حضوری نیست.</p>
+{% endblock %}
